@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         case Empty="Empty"
     }
     
-    var runningNumber=""
+    var runningNumber="0"
     var currentOperation=Operation.Empty
     var leftHandValue=""
     var rightHandValue=""
