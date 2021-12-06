@@ -13,6 +13,7 @@
 		39409804275C8F51004D5769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39409802275C8F51004D5769 /* Main.storyboard */; };
 		39409806275C8F55004D5769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39409805275C8F55004D5769 /* Assets.xcassets */; };
 		39409809275C8F55004D5769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39409807275C8F55004D5769 /* LaunchScreen.storyboard */; };
+		39409811275CA681004D5769 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39409810275CA680004D5769 /* Minecraft.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		39409805275C8F55004D5769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39409808275C8F55004D5769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3940980A275C8F55004D5769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39409810275CA680004D5769 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		394097FB275C8F51004D5769 /* UIkit-Retro-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				39409810275CA680004D5769 /* Minecraft.ttf */,
 				394097FC275C8F51004D5769 /* AppDelegate.swift */,
 				394097FE275C8F51004D5769 /* SceneDelegate.swift */,
 				39409800275C8F51004D5769 /* ViewController.swift */,
@@ -127,6 +130,7 @@
 			files = (
 				39409809275C8F55004D5769 /* LaunchScreen.storyboard in Resources */,
 				39409806275C8F55004D5769 /* Assets.xcassets in Resources */,
+				39409811275CA681004D5769 /* Minecraft.ttf in Resources */,
 				39409804275C8F51004D5769 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
