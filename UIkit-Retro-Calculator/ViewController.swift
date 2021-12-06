@@ -13,6 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLbl: UILabel!
     var btnSound:AVAudioPlayer!
     
+    enum Operation:String{
+        case Divide="/"
+        case Multiply="*"
+        case Subtraction="-"
+        case Addition="+"
+        case Empty="Empty"
+    }
+    
+    var runningNumber=""
+    var currentOperation=Operation.Empty
+    var leftHandValue=""
+    var rightHandValue=""
+    var result=""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         resultLbl.text="0"
@@ -27,6 +42,28 @@ class ViewController: UIViewController {
 
     @IBAction func numberPressed(sender:UIButton){
         playSound()
+        runningNumber+="\(sender.tag)"
+        resultLbl.text=runningNumber
+    }
+    
+    @IBAction func onDividePressed(sender:AnyObject){
+        processOperation(operation: .Divide)
+    }
+    
+    @IBAction func onMultiplyPressed(sender:AnyObject){
+        processOperation(operation: .Multiply)
+    }
+    
+    @IBAction func onAdditionPressed(sender:AnyObject){
+        processOperation(operation: .Addition)
+    }
+    
+    @IBAction func onSubtractionPressed(sender:AnyObject){
+        processOperation(operation: .Subtraction)
+    }
+    
+    @IBAction func onEqualPressed(sender:AnyObject){
+        processOperation(operation: currentOperation)
     }
     
     func playSound(){
@@ -34,6 +71,36 @@ class ViewController: UIViewController {
             btnSound.stop()
         }
         btnSound.play()
+    }
+    
+    func processOperation(operation:Operation){
+        playSound()
+        if currentOperation != Operation.Empty {
+            if runningNumber != "" {
+                rightHandValue=runningNumber
+                runningNumber=""
+                
+                if currentOperation == Operation.Multiply {
+                    result="\(Double(leftHandValue)! * Double(rightHandValue)!)"
+                }else if currentOperation == Operation.Divide {
+                    result="\(Double(leftHandValue)! / Double(rightHandValue)!)"
+                }else if currentOperation == Operation.Addition {
+                    result="\(Double(leftHandValue)! + Double(rightHandValue)!)"
+                }else if currentOperation == Operation.Subtraction {
+                    result="\(Double(leftHandValue)! - Double(rightHandValue)!)"
+                }
+                leftHandValue=result
+                resultLbl.text=result
+        
+            }
+            currentOperation=operation
+
+        }else{
+            leftHandValue=runningNumber
+            runningNumber=""
+            currentOperation=operation
+            
+        }
     }
 
 }
